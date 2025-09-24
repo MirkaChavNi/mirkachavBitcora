@@ -153,3 +153,45 @@ h2, h3 {
 .social-icon:hover {
   transform: scale(1.2);
 }
+
+body {
+  /* 🚨 cuidado: no sobreescribas tu fondo actual */
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/036/467/571/small_2x/magic-pattern-of-silver-stars-free-png.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Cajas decorativas */
+.hermano-container {
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  gap: 30px; /* espacio entre las cajas */
+  flex-wrap: wrap; /* si hay muchas, se bajan en filas */
+  margin: 40px 0;
+}
+
+.hermano {
+  height: 250px;
+  width: 220px;
+  background: linear-gradient(135deg, #F7D1C6 0%, #EFCB8D 100%);
+  padding: 20px;
+  border: 3px solid #D89F4E;
+  box-shadow: 6px 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  color: #333;
+  font-family: "Roboto Flex", sans-serif;
+  text-align: center;
+  font-size: 1.2em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hermano:hover {
+  transform: translateY(-8px);
+  box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+    
+    
+    
+    
