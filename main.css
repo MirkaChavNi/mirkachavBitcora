@@ -1,0 +1,608 @@
+/* ============================================================
+   VARIABLES GLOBALES
+   (NO MODIFICAR: colores y variables originales tal cual)
+============================================================ */
+:root {
+  --color-bg-main: #F4EBE4;
+  --color-bg-header: #F7D1C6;
+  --color-bg-footer: #EFCB8D;
+  --color-accent: #EFCB8D;
+  --color-text: #000;
+  --color-light: black;
+}
+
+/* ============================================================
+   RESET / REGLAS GLOBALES
+============================================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  /* fondo y tipografía original */
+  background-color: var(--color-bg-main);
+  background-image: url(Imagen/fondo%20estrella.png);
+  background-repeat: repeat;
+  background-size: contain;
+  font-family: "Roboto Flex", sans-serif;
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+  height: 3000px;
+}
+
+/* CONTENEDOR PRINCIPAL que permite footer abajo + sticky funcionando */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* El main ocupa el espacio disponible para empujar el footer */
+main {
+  flex: 1;
+}
+
+/* ============================================================
+   ENCABEZADO
+============================================================ */
+.header {
+  background-color: var(--color-bg-header);
+  padding: 40px 20px;
+  text-align: center;
+  /* si tienes .menu como sticky, mantenlo con z-index alto */
+}
+
+/* Si usas .menu (en tu HTML lo tenías), mantenlo sticky */
+.menu {
+  position: sticky;
+  top: 0;
+  background-color: #D89F4E;
+  padding: 15px 0;
+  text-align: center;
+  overflow: hidden;
+  z-index: 100; /* se mantiene encima de otros elementos */
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-family: "Noto Sans Display", sans-serif;
+  font-weight: 600;
+  margin: 0 25px;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #F4EBE4;
+}
+
+/* ============================================================
+   TIPOGRAFÍAS Y UTILIDADES DE TEXTO
+   (mantengo las familias y tamaños originales)
+============================================================ */
+.font-title-big {
+  font-family: "Patua One", serif;
+  font-weight: 400;
+  font-size: 8.5em;
+  color: var(--color-text);
+}
+
+.font-subtitle {
+  font-family: "Noto Sans Display", sans-serif;
+  font-weight: 200;
+  font-size: 2.5em;
+  color: var(--color-text);
+}
+
+.font-subtitle-2 {
+  font-family: "Noto Sans Display", sans-serif;
+  font-weight: 200;
+  font-size: 3em;
+  color: var(--color-text);
+}
+
+.font-totext {
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 300;
+  font-size: 2em;
+  color: var(--color-text);
+}
+
+.font-totext-2 {
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  color: var(--color-text);
+}
+
+.font-totext-3 {
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  color: var(--color-bg-main);
+}
+
+/* ============================================================
+   IMAGENES - contenedores y estilos
+============================================================ */
+.imagen-grande {
+  display: block;
+  width: 90%;
+  max-width: 900px;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 8px;
+}
+
+.contenedor-imagenes {
+  display: flex;              /* Activa Flexbox para paralelo horizontal */
+  justify-content: center;    /* Centra horizontalmente */
+  align-items: center;        /* Centra verticalmente */
+  column-gap: 20px;           /* Espacio entre imágenes */
+  padding: 20px;              /* Espacio alrededor */
+  max-width: 2000px;          /* Ancho máximo para no desbordar */
+  margin: 0 auto;             /* Centra el contenedor en la página */
+}
+
+.contenedor-imagenes img {
+  width: 48%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imagengrande {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.imagengrande img {
+  width: 95%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   SECCIONES Y CAJAS PRINCIPALES
+============================================================ */
+section {
+  margin-bottom: 60px;
+}
+
+h2, h3 {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.caja {
+  background-color: var(--color-bg-header);
+  padding: 40px;
+  margin: 80px auto;
+  border-radius: 12px;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.color-section {
+  background-color: var(--color-bg-header);
+  padding: 60px 20px;
+  margin: 80px auto;
+  border-radius: 12px;
+  max-width: 1000px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.presentacion-canva {
+  background-color: var(--color-bg-header);
+  padding: 60px 20px;
+  margin: 80px auto;
+  border-radius: 12px;
+  max-width: 1000px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.presentacion-canva h2 {
+  margin-bottom: 10px;
+}
+
+.presentacion-canva p {
+  margin-bottom: 25px;
+  color: var(--color-text);
+}
+
+.canva-embed {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.canva-embed iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: none;
+}
+
+.canva-link {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 0.95em;
+  text-decoration: none;
+  color: #000;
+  background-color: #EFCB8D;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.canva-link:hover {
+  background-color: #D89F4E;
+  color: white;
+}
+
+/* ============================================================
+   CAJAS DECORATIVAS Y POSICIONADAS
+============================================================ */
+.hermano-container {
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  gap: 30px; /* espacio entre las cajas */
+  flex-wrap: wrap; /* si hay muchas, se bajan en filas */
+  margin: 40px 0;
+}
+
+.hermano {
+  height: 250px;
+  width: 220px;
+  background: linear-gradient(135deg, #F7D1C6 0%, #EFCB8D 100%);
+  padding: 20px;
+  border: 3px solid #D89F4E;
+  box-shadow: 6px 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  color: #333;
+  font-family: "Roboto Flex", sans-serif;
+  text-align: center;
+  font-size: 1.2em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hermano:hover {
+  transform: translateY(-8px);
+  box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.posicion-demo {
+  position: relative;
+  margin: 100px auto;
+  width: 300px;
+  height: 300px;
+  background-color: #F7D1C6;
+  border: 2px solid #D89F4E;
+  border-radius: 10px;
+}
+
+.caja1, .caja2 {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 500;
+}
+
+.caja1 {
+  background-color: #E58E73;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 2;
+}
+
+.caja2 {
+  background-color: #C66D47;
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  z-index: 1;
+}
+
+.caja-inline {
+  background-color: #F7D1C6;
+  color: #000;
+  padding: 10px;
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  border: 2px solid #EFCB8D;
+  border-radius: 10px;
+  text-align: center;
+  vertical-align: top;
+}
+
+/* ============================================================
+   ANIMACIONES Y EFECTOS
+============================================================ */
+.animaciones {
+  text-align: center;
+  margin: 50px auto;
+  width: 80%;
+  max-width: 800px;
+}
+
+.contenedoor {
+  margin: 20px 0;
+}
+
+.cajita {
+  width: 100px;
+  height: 100px;
+  background-color: #D89F4E;
+  color: white;
+  line-height: 100px;
+  text-align: center;
+  margin: 10px auto;
+  border-radius: 10px;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Movimiento */
+.mover:hover {
+  transform: translateX(150px);
+}
+
+/* Escala */
+.escalar:hover {
+  transform: scale(1.5);
+}
+
+/* Rotación */
+.rotar:hover {
+  transform: rotate(360deg);
+}
+
+/* Cambio de color */
+.color:hover {
+  background-color: #EFCB8D;
+}
+
+/* ============================================================
+   FORMULARIO EN FOOTER
+============================================================ */
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.footer-form input,
+.footer-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  background-color: #D89F4E;
+  color: #fff;
+}
+
+.footer-form input::placeholder,
+.footer-form textarea::placeholder {
+  color: #fff;
+}
+
+.footer-form button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 0.3rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.footer-form button:hover {
+  background-color: #F7D1C6;
+}
+
+/* ============================================================
+   FOOTER (con margin-top: auto para pegarlo abajo)
+============================================================ */
+.footer {
+  background-color: var(--color-bg-footer);
+  padding: 20px 0;
+  margin-top: auto; /* hace que el footer quede abajo en la .page-wrapper */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 10px;
+}
+
+.footer-section a {
+  text-decoration: none;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li {
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.footer-logo {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.footer-text {
+  margin-top: 5px;
+  font-size: 14px;
+  color: var(--color-light);
+}
+
+.social-icon {
+  width: 30px;
+  height: auto;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+/* ============================================================
+   BANNER DE COOKIES (fixed)
+============================================================ */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.cookie-banner a {
+  color: #4caf50;
+  text-decoration: underline;
+}
+
+.cookie-banner button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.cookie-banner button:hover {
+  background-color: #45a049;
+}
+
+/* ============================================================
+   SECCIÓN DE COLORES (boxes)
+============================================================ */
+.color-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.color-box {
+  width: 180px;
+  height: 160px;
+  border-radius: 12px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto Flex", sans-serif;
+  box-shadow: 4px 6px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--color-bg-main);
+}
+
+.color-box h3 {
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.color-box p {
+  margin: 5px 0 0;
+  font-size: 0.9em;
+}
+
+.color-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 6px 10px 18px rgba(0,0,0,0.25);
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 600px) {
+  .contenedor-imagenes {
+    flex-direction: column; /* Cambia a vertical */
+    gap: 10px;
+  }
+  .contenedor-imagenes img {
+    width: 100%;            /* Ocupa todo el ancho en móvil */
+  }
+  .imagengrande img {
+    width: 100%;
+  }
+  .footer {
+    text-align: center;
+  }
+  .footer-section {
+    align-items: center;
+  }
+  .footer-form {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+  .color-box {
+    width: 140px;
+    height: 130px;
+    font-size: 0.9em;
+  }
+}
+
